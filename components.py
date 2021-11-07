@@ -146,13 +146,16 @@ class Calculator():
             img = pygame.transform.scale(Calculator.SButton.arrov_img, (self.rect.width*0.45, self.rect.width*0.45))
             screen.blit(img, (self.rect.centerx-img.get_size()[0]/2,self.rect.centery-img.get_size()[1]/2))
 
-        def mouse_interaction(self, Pressed):
+        def mouse_interaction(self, Pressed, value):
             m = pygame.mouse.get_pos()
             if  m[0] > self.rect.left and m[0] < self.rect.right and m[1] < self.rect.bottom and m[1] > self.rect.top:
                 self.color = self.h_col
                 if Pressed == False and pygame.mouse.get_pressed()[0]:
                     Pressed = True
-                    return "tan_anim"
+                    if not value == "":
+                        return "tan_anim"
+                    else:
+                        return "tan"
             else:
                 Pressed= False
                 self.color = self.n_col
@@ -221,7 +224,7 @@ class Calculator():
         if self.n_buttons[-1].mouse_interaction(self.pressed):
             self.value = self.value[:-1]
         
-        self.v_button.mouse_interaction(self.pressed)
+        self.v_button.mouse_interaction(self.pressed, self.value)
 
         if not pygame.mouse.get_pressed()[0]:
             self.pressed = False

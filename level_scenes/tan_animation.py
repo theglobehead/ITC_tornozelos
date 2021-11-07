@@ -1,7 +1,7 @@
 import pygame, random
 from pygame.locals import *
 from components import Background, Meteor, Missile
-import return_to_levels
+import level_scenes.return_to_levels
 
 Pressed = True
 frame = 0
@@ -344,12 +344,12 @@ def main(screen):
     elif level < 13:
         drav_sin(screen)
         if frame == 7*fps:
-            return_to_levels.result = result
+            level_scenes.return_to_levels.result = result
             return "rtl"
     else:
         drav_tan(screen)
     if frame == 10*fps:
-        return_to_levels.result = result
+        level_scenes.return_to_levels.result = result
         return "rtl"
     return "tan_anim"
     

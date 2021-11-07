@@ -1,7 +1,7 @@
 import pygame, sys
 from pygame.locals import *
-import menu, levels, info, level_scenes.tan, level_scenes.tan_animation
-import return_to_levels, level_scenes.level_info, settings, formulas
+import menu_scenes.menu, menu_scenes.levels, menu_scenes.info, level_scenes.tan, level_scenes.tan_animation
+import level_scenes.return_to_levels, level_scenes.level_info, menu_scenes.settings, menu_scenes.formulas
 pygame.init()
  
 # Game Setup
@@ -16,25 +16,25 @@ scene = "menu"
 def render_scene():
     global scene
     if scene == "menu":
-        scene = menu.main(screen)
+        scene = menu_scenes.menu.main(screen)
     elif scene == "levels":
-        scene = levels.main(screen)
+        scene = menu_scenes.levels.main(screen)
     elif scene == "quit":
         sys.exit()
     elif scene == "instructions":
-        scene = info.main(screen)
+        scene = menu_scenes.info.main(screen)
     elif scene == "tan":
         scene = level_scenes.tan.main(screen)
     elif scene == "tan_anim":
         scene = level_scenes.tan_animation.main(screen)
     elif scene == "rtl":
-        scene = return_to_levels.main(screen)
+        scene = level_scenes.return_to_levels.main(screen)
     elif scene == "level_info":
         scene = level_scenes.level_info.main(screen)
     elif scene == "statistics":
-        scene = settings.main(screen)
+        scene = menu_scenes.settings.main(screen)
     elif scene == "formulas":
-        scene = formulas.main(screen)
+        scene = menu_scenes.formulas.main(screen)
 
 def main ():
   while True:

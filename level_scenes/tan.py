@@ -1,6 +1,6 @@
 import pygame
 from pygame.locals import *
-import level_scenes.tan_animation, levels
+import level_scenes.tan_animation, menu_scenes.levels
 from components import Calculator, Meteor, Missile, Observatory
 import numpy as np
 
@@ -162,13 +162,13 @@ def get_scene():
         Pressed = False
     
     
-    direction = numpad.v_button.mouse_interaction(numpad.pressed)
+    direction = numpad.v_button.mouse_interaction(numpad.pressed, numpad.value)
     if direction == "tan_anim":
         if level_info["a"] == numpad.value:
             level_scenes.tan_animation.result = "CORRECT!"
-            levels.buttons[level-1].completed = True
-            levels.buttons[level-1].bockground = (255,255,255)
-            levels.buttons[level-1].color = (0,0,0)
+            menu_scenes.levels.buttons[level-1].completed = True
+            menu_scenes.levels.buttons[level-1].bockground = (255,255,255)
+            menu_scenes.levels.buttons[level-1].color = (0,0,0)
 
             completed_levels = open("public/variables/completed_levels.txt","r")
             completed_levelsl = completed_levels.readlines()
@@ -177,7 +177,7 @@ def get_scene():
             completed_levels.writelines(completed_levelsl)
 
             if level < 18:
-                levels.buttons[level].locked = False
+                menu_scenes.levels.buttons[level].locked = False
                 unlocked_levels = open("public/variables/unlocked_levels.txt","r")
                 unlocked_levelsl = unlocked_levels.readlines()
                 unlocked_levelsl[level] = "True\n"

@@ -91,7 +91,7 @@ def drav_text(screen, text):
     for line in lines:
         img = t_font.render(line, True, (255,255,255))
         screen.blit(img, (vidth*0.07, y))
-        y += img.get_size()[1]
+        y += img.get_size()[1]*1.5
     
     return len(lines)
 
@@ -129,7 +129,7 @@ def drav_info(screen, name):
     line_n = drav_text(screen, info_text)
     
     font = t_font
-    line_top = 0.2*height + (0.02*int(max(vidth, height)))*line_n
+    line_top = 0.15*height + (0.02*int(max(vidth, height)))*line_n*1.5
     for line in info_lines:
         img = font.render(line, True, (255,255,255))
         screen.blit(img, (vidth*0.07, line_top))
