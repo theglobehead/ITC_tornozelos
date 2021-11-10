@@ -7,8 +7,11 @@ pygame.init()
 # Game Setup
 FPS = 60
 fpsClock = pygame.time.Clock()
+
+pygame_icon = pygame.image.load('public/images/icon_img.png')
+pygame.display.set_icon(pygame_icon)
  
-screen = pygame.display.set_mode((0,0))
+screen = pygame.display.set_mode((0,0), pygame.NOFRAME)
 pygame.display.set_caption('Matheoroids')
  
 scene = "menu"
