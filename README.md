@@ -4,12 +4,12 @@
 
 Clone the repository:  
 `git clone https://github.com/theglobehead/ITC_tornozelos.git`  
-Install requierments:
-`pip install -r requirements.txt`
-If that doesn't work, make sure that you have pip and try these:
-`python pip install -r requirements.txt`
-`python -m pip install -r requirements.txt`
-`python3 -m pip install -r requirements.txt`
+Install requierments:  
+`pip install -r requirements.txt`  
+If that doesn't work, make sure that you have pip and try these:  
+`python pip install -r requirements.txt`  
+`python -m pip install -r requirements.txt`  
+`python3 -m pip install -r requirements.txt`  
 
 ## The original README
 
